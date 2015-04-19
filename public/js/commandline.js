@@ -148,9 +148,15 @@ var commands = {
 function pagedown() {
   blocker();
   var lineHeight = parseFloat(getComputedStyle(document.body).lineHeight);
-
   var current = document.body.scrollTop;
-  scrollTo(0, current + lineHeight * 23);
+  var screenSize = lineHeight * 23;
+  var scrollPoint = current + screenSize;
+
+  if (navigator.userAgent.indexOf('AppleWebKit') != -1){
+    scrollTo(0, current + screenSize);
+  } else {
+    window.scrollBy(0, scrollPoint);
+  }
 }
 
 // alias
