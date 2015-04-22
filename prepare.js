@@ -9,6 +9,7 @@ module.exports = function prepare ($, location) {
   // strip particular elements
   $('style,iframe,frame,frameset,img,hr,br,video,form,input,select,option,textarea,button').remove();
   $('link[rel=stylesheet]').remove();
+  $('script[src]').remove();
   $('[style]').each(function () {
     $(this).removeAttr('style');
   });
