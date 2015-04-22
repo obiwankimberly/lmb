@@ -23,13 +23,15 @@ img, video, audio, svg, canvas, iframe, isindex {
 */
 
 html, body, head, title,
-h0, h1, h2, h3, h4, h5, h6, p, ul, li, ol, pre, table,
+h0, h1, h2, h3, h4, h5, h6, p, ul, li, ol, pre,
 div, section, aside, header, footer, dl {
 	display: block;
 }
 
 a, b, strong, em, i, span {
 	display: inline;
+	font-weight: normal;
+	font-style: normal;
 }
 
 html {
@@ -161,9 +163,25 @@ address {
 	text-align: right;
 }
 
+table, thead, tbody, tr, th, td, caption {
+	display:inline;
+}
+
+form, fieldset, legend, label, select, option, textarea, button {
+	display: inline;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: inherit;
+}
+
 /*should only  work for first character without intervening elements e.g. not <hp1><p>*/
 hp1, hp2 {
 	text-transform: uppercase;
+}
+
+center {
+	text-align: left;
 }
 
 #command {

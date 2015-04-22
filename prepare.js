@@ -7,11 +7,14 @@ module.exports = function prepare ($, location) {
                      '<script src=/js/commandline.js></script>'].join('');
 
   // strip particular elements
-  $('style,iframe,frame,frameset,img,hr,br,video,form,input,select,option,textarea,button').remove();
+  $('iframe,frame,frameset,img,hr,br,video,input').remove();
   $('link[rel=stylesheet]').remove();
   $('script[src]').remove();
   $('[style]').each(function () {
     $(this).removeAttr('style');
+  });
+  $('[bgcolor]').each(function () {
+    $(this).removeAttr('bgcolor');
   });
 
 
@@ -20,6 +23,9 @@ module.exports = function prepare ($, location) {
     $(this).attr('type', 'text/plain');
   });
 
+  $('style').each(function () {
+    $(this).attr('type', 'text/plain');
+  });
 
   // all documents have an [END] at the...
   // TODO parser question?
